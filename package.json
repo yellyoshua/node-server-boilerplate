@@ -20,6 +20,8 @@
     "winston": "^3.7.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "@jest/globals": "^28.1.1",
     "eslint": "^8.17.0",
     "jest": "^28.1.1",
     "nodemon": "^2.0.16"
