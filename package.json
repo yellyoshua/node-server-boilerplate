@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server/app.js",
+    "eslint": "eslint --ext .js,.jsx server/",
     "dev": "nodemon"
   },
   "author": "yellyoshua",
