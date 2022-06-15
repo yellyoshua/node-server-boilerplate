@@ -1,23 +1,27 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export default (Model = mongoose.Model) => {
   return {
-    async find(filter = {}, options = {}) {
-			const {
-				limit,
-			} = options;
+    async find (filter = {}, options = {}) {
+      const {
+        limit
+      } = options;
 
       const mongooseInstance = Model.find(filter);
-      limit && mongooseInstance.limit(limit);
+      if (limit) {
+        mongooseInstance.limit(limit);
+      }
+      const data = await mongooseInstance.lean().exec();
 
-      return mongooseInstance.lean().exec();
+      return data;
     },
-    async create(body = {}) {
+    async create (body = {}) {
       const entity = new Model({
-        ...body,
+        ...body
       });
+      const data = await entity.save();
 
-      return entity.save();
-    },
+      return data;
+    }
   };
 };

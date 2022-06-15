@@ -1,19 +1,19 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import routes from "../modules/routes.js";
-import helpers from "../helpers/index.js";
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import routes from '../modules/routes.js';
+import helpers from '../helpers/index.js';
 
 const app = express();
 
-// parse application/JSON
+// Parse application/JSON
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
-// enable CORS
+// Enable CORS
 app.use(cors());
 
-// mount api routes
+// Mount api routes
 helpers.applyRoutes(routes, app);
 
 export default app;

@@ -1,11 +1,9 @@
-import mongoose from "mongoose";
-
-async function connect(url) {
-	return mongoose.connect(url, {
-		useNewUrlParser: true,
-	}).then(() => logger.info("Connected to MongoDB"));
-}
+import mongoose from 'mongoose';
 
 export default {
-	connect,
+  connect (url) {
+    return mongoose.connect(url, {
+      useNewUrlParser: true
+    }).then(() => logger.info('Connected to MongoDB'));
+  }
 };
