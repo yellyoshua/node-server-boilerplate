@@ -1,4 +1,5 @@
-import './services/logger.service.js';
+import './config/globals.js';
+import './config/signals.js';
 import vars from './config/vars.js';
 import app from './config/express.js';
 import mongoose from './config/mongoose.js';
