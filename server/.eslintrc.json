@@ -9,7 +9,8 @@
 		"jasmine": true
 	},
 	"globals": {
-		"logger": "readonly"
+		"logger": "readonly",
+    "__t": "readonly"
 	},
 	"parserOptions": {
 		"ecmaVersion": "latest",

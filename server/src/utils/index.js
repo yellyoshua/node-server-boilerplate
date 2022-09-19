@@ -4,8 +4,32 @@ import fs from 'fs';
 
 export default {
   applyRoutes,
-  walk
+  walk,
+  composeQuery
 };
+
+export class CustomError extends Error {
+  constructor (message) {
+    super(message);
+    this.name = this.constructor.name;
+    this.message = message;
+  }
+}
+
+function composeQuery (query = {}) {
+  const filter = {};
+  const options = {};
+
+  Object.keys(query).forEach((key) => {
+    if (key.startsWith('___')) {
+      options[key.replace('___', '')] = query[key];
+    } else {
+      filter[key] = query[key];
+    }
+  });
+
+  return {filter, options};
+}
 
 function walk (directory, pattern = '', filepaths = []) {
   // eslint-disable-next-line no-sync

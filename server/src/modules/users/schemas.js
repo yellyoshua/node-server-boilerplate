@@ -1,6 +1,6 @@
-import {Joi} from 'express-validation';
+import Joi from 'joi';
 
-export const createUserValidator = {
+export const createUserSchema = {
   body: {
     full_name: Joi.string().required(),
     country: Joi.string().required(),
