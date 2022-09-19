@@ -10,7 +10,7 @@ export default () => {
   i18n.configure({
     locales: ['en', 'es'],
     defaultLocale: 'en',
-    directory: path.join(__dirname, '../../locales'),
+    directory: path.join(__dirname, '../locales'),
     header: 'app-language',
     updateFiles: false,
     extension: '.json',
