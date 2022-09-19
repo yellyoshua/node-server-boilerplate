@@ -1,4 +1,4 @@
-import usersController from '../controllers/users.controller.js';
+import usersController from './users.controller.js';
 
 export default [
   {

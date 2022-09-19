@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import model from '../../core/model.js';
+import model from '../core/model.js';
 
 const usersSchema = new mongoose.Schema({
   full_name: {

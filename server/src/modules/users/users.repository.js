@@ -1,4 +1,4 @@
-import usersModel from '../models/users.model.js';
+import usersModel from './users.model.js';
 
 export default {
   async getAll (query = {}) {
